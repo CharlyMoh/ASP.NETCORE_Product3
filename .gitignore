@@ -1,18 +1,54 @@
-# Ignorar archivos y carpetas de Visual Studio
+# Archivos y carpetas de Visual Studio
 .vs/
 .vscode/
+*.suo
 *.user
 *.userosscache
 *.suo
 *.userprefs
+*.sln.docstates
 
-# Ignorar archivos generados de compilación
-bin/
-obj/
-
-# Ignorar archivos de configuración de ASP.NET Core
+# Archivos de configuración de ASP.NET Core
 appsettings.json
 appsettings.Development.json
 
-# Archivos temporales de base de datos
+# Archivos y carpetas de compilación
+bin/
+obj/
+
+# Archivos de NuGet
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+# Archivos generados por MSBuild
+Product3_Web_NETCORE/obj/Debug/net8.0/
+Product3_Web_NETCORE/obj/Release/net8.0/
+
+# Archivos de configuración específicos de ASP.NET Core
+project.assets.json
+project.nuget.cache
+*.bak
+
+# Archivos de bases de datos locales
 *.db
+*.sql
+
+# Archivos de usuario específicos de Visual Studio
+.vsconfig
+
+# Ignorar los archivos temporales de Visual Studio
+*.tmp
+*.log
+
+# Ignorar los archivos de build de JetBrains Rider
+.idea/
+
+# Archivos generados por el entorno de desarrollo
+*.pidb
+*.userprefs
+
+# Archivos de configuración específicos de NuGet
+.nuget/
+
+# Ignorar archivos de publicación
+publish/
