@@ -1,0 +1,18 @@
+# Ignorar archivos y carpetas de Visual Studio
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignorar archivos generados de compilación
+bin/
+obj/
+
+# Ignorar archivos de configuración de ASP.NET Core
+appsettings.json
+appsettings.Development.json
+
+# Archivos temporales de base de datos
+*.db
