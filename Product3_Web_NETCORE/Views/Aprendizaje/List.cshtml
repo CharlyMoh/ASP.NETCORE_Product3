@@ -2,5 +2,65 @@
     ViewData["Title"] = "List";
 }
 
-<h1>@ViewData["Title"]</h1>
-<p>Pagina para aprender Listas</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Aquí podrías incluir un archivo CSS -->
+    @* <link rel="stylesheet" href="~/css/styles.css"> *@
+</head>
+<body>
+
+    <header>
+        <h1>@ViewData["Title"]</h1>
+        <p>Pagina para aprender Listas</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>¿Qué es una lista?</h2>
+            <p>
+                Una lista es una estructura de datos que permite almacenar una colección de elementos.
+                En la mayoría de los lenguajes de programación, las listas son dinámicas, lo que significa
+                que puedes añadir o eliminar elementos según sea necesario.
+            </p>
+        </section>
+
+        <section>
+            <h2>Operaciones Básicas con Listas</h2>
+            <p>Las operaciones más comunes con listas incluyen:</p>
+            <ul>
+                <li><strong>Crear una lista</strong>: Inicializar una lista vacía o con elementos.</li>
+                <li><strong>Añadir elementos</strong>: Agregar nuevos elementos al final de la lista.</li>
+                <li><strong>Eliminar elementos</strong>: Remover elementos específicos de la lista.</li>
+                <li><strong>Acceder a elementos</strong>: Obtener un elemento por su índice.</li>
+                <li><strong>Recorrer la lista</strong>: Iterar sobre todos los elementos de la lista.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Operaciones con lenguaje C#</h2>
+            <p>Las operaciones más comunes con listas incluyen:</p>
+            <ul>
+                <li><strong>Crear una lista</strong>: List<T> lista = new List<T>();.</li>
+                <li><strong>Acceso a elementos</strong>: lista[index].</li>
+                <li><strong>Modificación de elementos</strong>: lista[index] = valor;.</li>
+                <li><strong>Añadir elementos</strong>: lista.Add(elemento);.</li>
+                <li><strong>Eliminar elementos</strong>: lista.Remove(elemento);.</li>
+                <li><strong>Recomendación para recorrer listas</strong>: Usar bucles foreach o for.</li>
+            </ul>
+            <h2>Métodos comunes</h2>
+            <p>Add(), Remove(), Insert(), Clear(), Contains(), Sort(), etc.</p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Aquí puedes incluir información del pie de página si es necesario -->
+    </footer>
+
+    <!-- Aquí puedes incluir un archivo JavaScript -->
+    @* <script src="~/js/scripts.js"></script> *@
+</body>
+</html>
