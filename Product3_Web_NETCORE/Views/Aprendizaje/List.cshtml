@@ -8,18 +8,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <!-- Aquí podrías incluir un archivo CSS -->
-    @* <link rel="stylesheet" href="~/css/styles.css"> *@
+    <link href="~/css/liststyles.css" rel="stylesheet" />
 </head>
 <body>
 
-    <header>
+    <header class="content-header">
         <h1>@ViewData["Title"]</h1>
-        <p>Pagina para aprender Listas</p>
+        <h2>Aprende la teoria sobre listas en programación</h2>
     </header>
 
-    <main>
-        <section>
+    <main class="content-main">
+        <section class="content-section">
             <h2>¿Qué es una lista?</h2>
             <p>
                 Una lista es una estructura de datos que permite almacenar una colección de elementos.
@@ -28,48 +27,88 @@
             </p>
         </section>
 
-        <section>
+        <section class="content-section">
+            <h2>Genera tu propia lista</h2>
+            <ul id="lista-aleatoria"></ul>
+            <button onclick="mostrarListaAleatoria()">Generar Nueva Lista</button>
+        </section>
+
+        <section class="content-section">
             <h2>Operaciones Básicas con Listas</h2>
             <p>Las operaciones más comunes con listas incluyen:</p>
-            <ul>
+            <ul class="content-list">
                 <li><strong>Crear una lista</strong>: Inicializar una lista vacía o con elementos.</li>
                 <li><strong>Añadir elementos</strong>: Agregar nuevos elementos al final de la lista.</li>
                 <li><strong>Eliminar elementos</strong>: Remover elementos específicos de la lista.</li>
                 <li><strong>Acceder a elementos</strong>: Obtener un elemento por su índice.</li>
                 <li><strong>Recorrer la lista</strong>: Iterar sobre todos los elementos de la lista.</li>
             </ul>
+        </section>
 
-            <h2>Operaciones con lenguaje C#</h2>
-            <p>Las operaciones más comunes con listas incluyen:</p>
-            <ul>
-                <li><strong>Crear una lista</strong>: List<T> lista = new List<T>();.</li>
-                <li><strong>Acceso a elementos</strong>: lista[index].</li>
-                <li><strong>Modificación de elementos</strong>: lista[index] = valor;.</li>
-                <li><strong>Añadir elementos</strong>: lista.Add(elemento);.</li>
-                <li><strong>Eliminar elementos</strong>: lista.Remove(elemento);.</li>
-                <li><strong>Recomendación para recorrer listas</strong>: Usar bucles foreach o for.</li>
-            </ul>
+        <section class="content-section">
+            <h2>Operaciones con Listas</h2>
+            <p>Selecciona un lenguaje para ver cómo se realizan las operaciones con listas:</p>
 
-            <br />
+            <!-- Selector de lenguaje -->
+            <select id="selector-lenguaje">
+                <option value="csharp">C#</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+
+            <!-- Sección dinámica para mostrar las operaciones -->
+            <div id="operaciones-lenguaje">
+                <!-- Aquí se mostrarán las operaciones según el lenguaje seleccionado -->
+            </div>
+        </section>
+
+        <section class="content-section">
             <h2>Métodos comunes</h2>
-            <p>Add(), Remove(), Insert(), Clear(), Contains(), Sort(), etc.</p>
+            <p><code>Add()</code>, <code>Remove()</code>, <code>Insert()</code>, <code>Clear()</code>, <code>Contains()</code>, <code>Sort()</code>, etc.</p>
+        </section>
 
+        <section class="content-section">
+            <h2>Prueba los métodos de listas en tiempo real</h2>
+
+            <!-- Mostrar la lista actual -->
+            <h3>Lista Actual</h3>
+            <ul id="lista-actual"></ul>
+
+            <!-- Formulario para interactuar con la lista -->
+            <form id="form-lista">
+                <!-- Campo para agregar/insertar elementos -->
+                <label for="elemento">Elemento:</label>
+                <input type="text" id="elemento" placeholder="Ingresa un elemento" required>
+
+                <!-- Campo para el índice (solo para Insert) -->
+                <label for="indice">Índice (opcional):</label>
+                <input type="number" id="indice" placeholder="Índice">
+
+                <!-- Botones para los métodos -->
+                <button type="button" onclick="agregarElemento()">Add</button>
+                <button type="button" onclick="eliminarElemento()">Remove</button>
+                <button type="button" onclick="insertarElemento()">Insert</button>
+                <button type="button" onclick="limpiarLista()">Clear</button>
+                <button type="button" onclick="verificarElemento()">Contains</button>
+                <button type="button" onclick="ordenarLista()">Sort</button>
+            </form>
+
+            <!-- Mostrar resultados de Contains -->
+            <p id="resultado-contains"></p>
+        </section>
+
+        <section class="content-section">
             <h2>Aplicaciones</h2>
-            <ul>
+            <ul class="content-list">
                 <li>Almacenamiento dinámico de datos</li>
                 <li>Implementación de estructuras de datos como pilas y colas</li>
                 <li>Uso en algoritmos de búsqueda y ordenamiento</li>
             </ul>
-
         </section>
-
     </main>
-
-    <footer>
-        <!-- Aquí puedes incluir información del pie de página si es necesario -->
-    </footer>
-
-    <!-- Aquí puedes incluir un archivo JavaScript -->
-    @* <script src="~/js/scripts.js"></script> *@
 </body>
+    @* Scripts colocar aca *@
+    <script src="~/js/listaaleatoria.js"></script>
+    <script src="~/js/metodoslistas.js"></script>
+    <script src="~/js/operacioneslistas.js"></script>
 </html>

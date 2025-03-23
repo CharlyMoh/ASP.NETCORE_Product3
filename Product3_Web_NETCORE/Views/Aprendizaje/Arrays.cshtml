@@ -1,6 +1,123 @@
 ﻿@{
-    ViewData["Title"] = "Arrays";
+    ViewData["Title"] = "Arreglos";
 }
 
-<h1>@ViewData["Title"]</h1>
-<p>Pagina para aprender Arreglos</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/liststyles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="content-header">
+        <h1>@ViewData["Title"]</h1>
+        <h2>Aprende la teoría sobre arreglos en programación</h2>
+    </header>
+
+    <main class="content-main">
+        <!-- Sección: ¿Qué es un arreglo? -->
+        <section class="content-section">
+            <h2>¿Qué es un arreglo?</h2>
+            <p>
+                Un arreglo es una estructura de datos que almacena una colección de elementos del mismo tipo.
+                A diferencia de las listas, los arreglos tienen un tamaño fijo en la mayoría de los lenguajes.
+            </p>
+        </section>
+
+        <!-- Sección: Genera tu propio arreglo -->
+        <section class="content-section">
+            <h2>Genera tu propio arreglo</h2>
+            <ul id="arreglo-aleatorio"></ul>
+            <button onclick="mostrarArregloAleatorio()">Generar Nuevo Arreglo</button>
+        </section>
+
+        <!-- Sección: Operaciones Básicas con Arreglos -->
+        <section class="content-section">
+            <h2>Operaciones Básicas con Arreglos</h2>
+            <p>Las operaciones más comunes con arreglos incluyen:</p>
+            <ul class="content-list">
+                <li><strong>Crear un arreglo</strong>: Inicializar un arreglo con un tamaño fijo.</li>
+                <li><strong>Acceder a elementos</strong>: Obtener un elemento por su índice.</li>
+                <li><strong>Modificar elementos</strong>: Cambiar el valor de un elemento en una posición específica.</li>
+                <li><strong>Recorrer el arreglo</strong>: Iterar sobre todos los elementos del arreglo.</li>
+            </ul>
+        </section>
+
+        <!-- Sección: Operaciones con Arreglos (por lenguaje) -->
+        <section class="content-section">
+            <h2>Operaciones con Arreglos</h2>
+            <p>Selecciona un lenguaje para ver cómo se realizan las operaciones con arreglos:</p>
+
+            <!-- Selector de lenguaje -->
+            <select id="selector-lenguaje">
+                <option value="csharp">C#</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+
+            <!-- Sección dinámica para mostrar las operaciones -->
+            <div id="operaciones-lenguaje">
+                
+            </div>
+        </section>
+
+        <!-- Sección: Métodos comunes -->
+        <section class="content-section">
+            <h2>Métodos comunes</h2>
+            <p><code>Length</code>, <code>Index</code>, <code>Sort</code>, <code>Reverse</code>, etc.</p>
+        </section>
+
+        <!-- Sección: Prueba los métodos de arreglos en tiempo real -->
+        <section class="content-section">
+            <h2>Prueba los métodos de arreglos en tiempo real</h2>
+
+            <!-- Mostrar el arreglo actual -->
+            <h3>Arreglo Actual</h3>
+            <ul id="arreglo-actual"></ul>
+
+            <!-- Formulario para interactuar con el arreglo -->
+            <form id="form-arreglo">
+                <!-- Grupo para el campo de elemento -->
+                <div class="form-group">
+                    <label for="elemento">Elemento:</label>
+                    <input type="text" id="elemento" placeholder="Ingresa un elemento" required>
+                </div>
+
+                <!-- Grupo para el campo de índice -->
+                <div class="form-group">
+                    <label for="indice">Índice:</label>
+                    <input type="number" id="indice" placeholder="Índice" required>
+                </div>
+
+                <!-- Grupo para los botones -->
+                <div class="form-group">
+                    <button type="button" onclick="modificarElemento()">Modificar</button>
+                    <button type="button" onclick="ordenarArreglo()">Sort</button>
+                    <button type="button" onclick="invertirArreglo()">Reverse</button>
+                </div>
+            </form>
+
+            <!-- Mostrar resultados de operaciones -->
+            <p id="resultado-operacion"></p>
+        </section>
+
+        <!-- Sección: Aplicaciones -->
+        <section class="content-section">
+            <h2>Aplicaciones</h2>
+            <ul class="content-list">
+                <li>Almacenamiento de datos estáticos</li>
+                <li>Implementación de matrices</li>
+                <li>Uso en algoritmos de búsqueda y ordenamiento</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="~/js/arregloAleatorio.js"></script>
+    <script src="~/js/metodosArreglos.js"></script>
+    <script src="~/js/operacionesArreglos.js"></script>
+</body>
+</html>

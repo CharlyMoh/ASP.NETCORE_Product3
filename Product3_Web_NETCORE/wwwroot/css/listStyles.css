@@ -1,0 +1,206 @@
+﻿/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header del contenido principal */
+.content-header {
+    margin: 25px auto 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 760px;
+    width: 100%;
+}
+
+    .content-header h1 {
+        color: #003366;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .content-header h2 {
+        color: #555555;
+        font-size: 1.5rem;
+    }
+
+/* Contenido principal */
+.content-main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-section {
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .content-section h2 {
+        color: #003366;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #003366;
+        padding-bottom: 5px;
+    }
+
+    .content-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+.content-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+    .content-list li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+
+.content-section strong {
+    color: #003366;
+}
+
+/* Estilos para código */
+.content-section pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.content-section code {
+    background-color: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+/* Estilos para enlaces */
+.content-section a {
+    color: #3399FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .content-section a:hover {
+        color: #003366;
+    }
+
+/* Clases reutilizables */
+.input-style {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.button-style {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+    .button-style:hover {
+        background-color: #002147;
+    }
+
+.list-style {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .list-style li {
+        background-color: #f4f4f4;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        font-size: 1.1rem;
+    }
+
+.result-style {
+    font-weight: bold;
+    color: #003366;
+    margin-top: 10px;
+}
+
+.form-style {
+    margin-bottom: 20px;
+}
+
+    .form-style .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-style label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #003366;
+    }
+
+/* Estilos para el selector de lenguaje */
+#selector-lenguaje {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la sección de operaciones */
+#operaciones-lenguaje {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    #operaciones-lenguaje h3 {
+        color: #003366;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    #operaciones-lenguaje ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    #operaciones-lenguaje li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+
+    #operaciones-lenguaje code {
+        background-color: #f4f4f4;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1rem;
+    }
