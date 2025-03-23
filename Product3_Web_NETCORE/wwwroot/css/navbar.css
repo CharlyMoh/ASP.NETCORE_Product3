@@ -1,0 +1,69 @@
+﻿/* Estilo para la navbar */
+.navbar {
+    background-color: #003366; /* Fondo azul oscuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 0.5rem 1rem; /* Espaciado interno reducido */
+}
+
+/* Estilo para el logo (navbar-brand) */
+.navbar-brand {
+    color: #ffffff; /* Texto en blanco */
+    font-weight: bold; /* Resaltar el texto */
+    font-size: 1.25rem; /* Tamaño del texto reducido */
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-brand i {
+        margin-right: 8px; /* Espacio entre el ícono y el texto reducido */
+    }
+
+/* Estilo para los enlaces de la navbar */
+.navbar-nav .nav-link {
+    color: #ffffff; /* Enlaces en blanco */
+    font-size: 1rem; /* Tamaño del texto reducido */
+    margin: 0 8px; /* Espaciado entre enlaces reducido */
+    padding: 0.5rem 1rem; /* Espaciado interno reducido */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+    /* Estilo para los enlaces cuando se pasa el mouse (hover) */
+    .navbar-nav .nav-link:hover {
+        color: #3399FF; /* Enlaces en azul brillante al pasar el mouse */
+        background-color: #002147; /* Fondo más oscuro al hacer hover */
+        border-radius: 4px; /* Bordes redondeados */
+        transform: translateY(-2px); /* Efecto de elevación */
+    }
+
+    /* Estilo para los enlaces activos */
+    .navbar-nav .nav-link.active {
+        color: #ffffff; /* Enlaces activos en blanco */
+        font-weight: bold; /* Resaltar el texto */
+    }
+
+/* Estilo para el botón de la navbar en dispositivos móviles */
+.navbar-toggler {
+    border-color: #66A9FF; /* Botón de toggler con color azul claro */
+}
+
+.navbar-toggler-icon {
+    background-color: #66A9FF; /* Icono de toggler en azul claro */
+}
+
+/* Fondo oscuro para el navbar colapsado en móvil */
+.navbar-collapse {
+    background-color: #003366; /* Fondo azul oscuro cuando la navbar se colapsa */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1rem; /* Tamaño del texto más pequeño en pantallas pequeñas */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Tamaño del texto más pequeño en pantallas pequeñas */
+        margin: 0 5px; /* Espaciado entre enlaces reducido */
+        padding: 0.25rem 0.5rem; /* Espaciado interno reducido */
+    }
+}
