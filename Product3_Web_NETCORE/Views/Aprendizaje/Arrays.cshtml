@@ -79,26 +79,27 @@
             <ul id="arreglo-actual"></ul>
 
             <!-- Formulario para interactuar con el arreglo -->
-            <form id="form-arreglo">
+            <form id="form-arreglo" class="form-style">
                 <!-- Grupo para el campo de elemento -->
                 <div class="form-group">
                     <label for="elemento">Elemento:</label>
-                    <input type="text" id="elemento" placeholder="Ingresa un elemento" required>
+                    <input type="text" id="elemento" class="input-style" placeholder="Ingresa un elemento" required>
                 </div>
 
                 <!-- Grupo para el campo de índice -->
                 <div class="form-group">
                     <label for="indice">Índice:</label>
-                    <input type="number" id="indice" placeholder="Índice" required>
+                    <input type="number" id="indice" class="input-style" placeholder="Índice" required>
                 </div>
 
                 <!-- Grupo para los botones -->
                 <div class="form-group">
-                    <button type="button" onclick="modificarElemento()">Modificar</button>
-                    <button type="button" onclick="ordenarArreglo()">Sort</button>
-                    <button type="button" onclick="invertirArreglo()">Reverse</button>
+                    <button type="button" onclick="modificarElemento()" class="button-style">Modificar</button>
+                    <button type="button" onclick="ordenarArreglo()" class="button-style">Sort</button>
+                    <button type="button" onclick="invertirArreglo()" class="button-style">Reverse</button>
                 </div>
             </form>
+
 
             <!-- Mostrar resultados de operaciones -->
             <p id="resultado-operacion"></p>
@@ -113,6 +114,20 @@
                 <li>Uso en algoritmos de búsqueda y ordenamiento</li>
             </ul>
         </section>
+
+        <div>
+
+            <h1> REFERENCIAS</h1>
+                <p>
+                    ingruizlargaespada.wordpress.com/wp-content/uploads/2013/12/tema4arreglos.pdf
+                    www.utm.mx/~mgarcia/PE4%28Arreglos%29.pdf
+                    www.investigacion.frc.utn.edu.ar/tecnicasdigitales/pub/file/arreglos.pdf
+                </p>
+        </div>
+
+        <div>
+
+        </div>
     </main>
 
     <!-- Scripts -->
@@ -120,4 +135,6 @@
     <script src="~/js/metodosArreglos.js"></script>
     <script src="~/js/operacionesArreglos.js"></script>
 </body>
+
+
 </html>

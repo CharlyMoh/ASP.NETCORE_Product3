@@ -74,23 +74,28 @@
             <h3>Lista Actual</h3>
             <ul id="lista-actual"></ul>
 
+            
             <!-- Formulario para interactuar con la lista -->
-            <form id="form-lista">
-                <!-- Campo para agregar/insertar elementos -->
-                <label for="elemento">Elemento:</label>
-                <input type="text" id="elemento" placeholder="Ingresa un elemento" required>
 
-                <!-- Campo para el índice (solo para Insert) -->
-                <label for="indice">Índice (opcional):</label>
-                <input type="number" id="indice" placeholder="Índice">
+            <form id="form-lista" class="form-style">
+                <!-- Grupo de campos de entrada -->
+                <div class="form-group">
+                    <label for="elemento">Elemento:</label>
+                    <input type="text" id="elemento" placeholder="Ingresa un elemento" class="input-style" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="indice">Índice (opcional):</label>
+                    <input type="number" id="indice" placeholder="Índice" class="input-style">
+                </div>
 
                 <!-- Botones para los métodos -->
-                <button type="button" onclick="agregarElemento()">Add</button>
-                <button type="button" onclick="eliminarElemento()">Remove</button>
-                <button type="button" onclick="insertarElemento()">Insert</button>
-                <button type="button" onclick="limpiarLista()">Clear</button>
-                <button type="button" onclick="verificarElemento()">Contains</button>
-                <button type="button" onclick="ordenarLista()">Sort</button>
+                <button type="button" onclick="agregarElemento()" class="button-style">Add</button>
+                <button type="button" onclick="eliminarElemento()" class="button-style">Remove</button>
+                <button type="button" onclick="insertarElemento()" class="button-style">Insert</button>
+                <button type="button" onclick="limpiarLista()" class="button-style">Clear</button>
+                <button type="button" onclick="verificarElemento()" class="button-style">Contains</button>
+                <button type="button" onclick="ordenarLista()" class="button-style">Sort</button>
             </form>
 
             <!-- Mostrar resultados de Contains -->
