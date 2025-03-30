@@ -1,0 +1,12 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+public class Usuario
+{
+    public int Id { get; set; }
+
+    [Required]
+    public string NombreUsuario { get; set; }
+
+    [Required]
+    public string Contrasena { get; set; }
+}

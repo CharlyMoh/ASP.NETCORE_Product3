@@ -1,0 +1,75 @@
+﻿@using Product3_Web_NETCORE.Models
+@{
+    ViewData["Title"] = "Encuesta de " + Model.Tema;
+    var preguntas = EncuestaPreguntas.ObtenerPreguntas(Model.Tema);
+    int index = 0;
+}
+
+<h2>Encuesta: @Model.Tema</h2>
+
+<form method="post" asp-action="Index" asp-controller="Encuesta" asp-route-tema="@Model.Tema">
+
+    @foreach (var item in preguntas)
+    {
+        var pregunta = item.Item1;
+        var opciones = item.Item2;
+
+        <div class="form-group">
+            <label>Pregunta @(index + 1): @pregunta</label><br />
+            @for (int i = 0; i < opciones.Length; i++)
+            {
+                <input type="radio" name="respuestas[@index]" value="@opciones[i]" /> @opciones[i]
+
+                <br />
+            }
+        </div>
+        index++;
+    }
+
+    <button type="submit" class="btn btn-primary">Enviar Respuestas</button>
+</form>
+
+
+@* @using Product3_Web_NETCORE.Models
+@{
+    ViewData["Title"] = "Encuesta de " + Model.Tema;
+    var preguntas = EncuestaPreguntas.ObtenerPreguntas(Model.Tema);
+    int index = 0;
+}
+
+<h2 class="text-center mt-4 mb-4">Encuesta: @Model.Tema</h2>
+
+<form method="post" asp-action="Index" asp-controller="Encuesta" asp-route-tema="@Model.Tema">
+    <div class="container d-flex flex-column gap-4">
+
+        @foreach (var item in preguntas)
+        {
+            var pregunta = item.Item1;
+            var opciones = item.Item2;
+            var currentIndex = index;
+
+            <div class="card p-4 shadow-sm border rounded">
+                <label class="fw-bold mb-2">Pregunta @(currentIndex + 1): @pregunta</label>
+
+                @for (int i = 0; i < opciones.Length; i++)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="respuestas[@currentIndex]"
+                               value="@opciones[i]"
+                               id="respuesta_@currentIndex_@i" />
+                        <label class="form-check-label" for="respuesta_@currentIndex_@i">
+                            @opciones[i]
+                        </label>
+                    </div>
+                }
+            </div>
+
+            index++;
+        }
+
+        <button type="submit" class="btn btn-primary mt-4 align-self-start">Enviar Respuestas</button>
+    </div>
+</form>
+ *@

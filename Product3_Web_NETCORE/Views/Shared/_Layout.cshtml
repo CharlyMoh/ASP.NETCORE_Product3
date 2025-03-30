@@ -40,6 +40,15 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Index">Account</a>
                         </li>
+
+                        <!--AGREGANDO BOTON DE cerrar-->
+                        @if (Context.Session.GetString("Usuario") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Login" asp-action="Logout">Cerrar sesión</a>
+                            </li>
+                        }
+
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
                         </li>
