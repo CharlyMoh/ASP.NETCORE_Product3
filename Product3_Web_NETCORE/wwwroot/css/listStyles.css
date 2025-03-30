@@ -250,3 +250,79 @@ body {
     .button-style:hover {
         background-color: #002147;
     }
+
+
+    /*ARREGLOS*/
+/* Estilo para el contenedor del arreglo aleatorio en forma horizontal */
+.contenedor-arreglo {
+    display: flex;
+    flex-direction: row; /* <-- Alineación horizontal */
+    gap: 10px; /* Espacio entre los cuadros */
+    margin-top: 15px;
+    flex-wrap: wrap; /* Permite que bajen si se llena el ancho */
+    justify-content: start; /* Alinea los cuadros a la izquierda */
+}
+
+
+/* Cada elemento del arreglo como una tarjetita */
+.tarjeta-arreglo {
+    border: 2px solid #003366;
+    border-radius: 6px;
+    padding: 12px 16px;
+    background-color: #f0f8ff;
+    text-align: center;
+    min-width: 100px;
+    font-weight: bold;
+    color: #003366;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+    .tarjeta-arreglo:hover {
+        transform: scale(1.05);
+    }
+
+    .tarjeta-arreglo .indice {
+        display: block;
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+/* Contenedor vertical de la lista */
+.contenedor-lista-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: flex-start;
+}
+
+/* Contenedor lado a lado */
+.contenedor-lista-canvas {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Alineación vertical optimizada */
+.contenedor-lista-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo de tarjetas reutilizado */
+.tarjeta-arreglo {
+    min-width: 120px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+/* Línea visual (puede servir de flecha simbólica) */
+.linea-conectora {
+    width: 2px;
+    background-color: #003366;
+    height: 100%;
+}

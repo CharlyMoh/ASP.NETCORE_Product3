@@ -14,10 +14,12 @@
 
     <header class="content-header">
         <h1>@ViewData["Title"]</h1>
-        <h2>Aprende la teoria sobre listas en programación</h2>
+        <h2>Aprende la teoría sobre listas en programación</h2>
     </header>
 
     <main class="content-main">
+
+        <!-- Qué es una lista -->
         <section class="content-section">
             <h2>¿Qué es una lista?</h2>
             <p>
@@ -27,12 +29,65 @@
             </p>
         </section>
 
+        <!-- Genera tu propia lista -->
+        <!-- Sección: Genera tu propia lista -->
         <section class="content-section">
             <h2>Genera tu propia lista</h2>
-            <ul id="lista-aleatoria"></ul>
-            <button onclick="mostrarListaAleatoria()">Generar Nueva Lista</button>
+            <button class="button-style" onclick="mostrarListaAleatoria()">Generar Nueva Lista</button>
+
+            <!-- Contenedor combinado -->
+            <div style="display: flex; gap: 30px;">
+                <!-- Tarjetas animadas -->
+                <div id="lista-aleatoria" class="contenedor-lista-vertical"></div>
+
+                <!-- Canvas exclusivo para esta lista -->
+                <canvas id="canvas-lista-aleatoria" width="300" height="600"></canvas>
+            </div>
         </section>
 
+
+        <!-- Prueba métodos de listas en tiempo real -->
+        <section class="content-section">
+            <h2>Prueba los métodos de listas en tiempo real</h2>
+
+            <div style="display: flex; gap: 30px;">
+                <!-- Tarjetas animadas -->
+                <div id="lista-visual" class="contenedor-lista-vertical"></div>
+
+                <!-- Canvas -->
+                <canvas id="canvas-lista-derecha" width="300" height="600"></canvas>
+            </div>
+
+            <!-- Lista textual -->
+            <h3>Lista Actual</h3>
+            <ul id="lista-actual" class="list-style" style="margin-top: 10px;"></ul>
+
+            <!-- Formulario -->
+            <form id="form-lista" class="form-style">
+                <div class="form-group">
+                    <label for="elemento">Elemento:</label>
+                    <input type="text" id="elemento" class="input-style" placeholder="Ingresa un elemento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="indice">Índice (opcional):</label>
+                    <input type="number" id="indice" class="input-style" placeholder="Índice">
+                </div>
+
+                <!-- Botones -->
+                <button type="button" onclick="agregarElemento()" class="button-style">Add</button>
+                <button type="button" onclick="eliminarElemento()" class="button-style">Remove</button>
+                <button type="button" onclick="insertarElemento()" class="button-style">Insert</button>
+                <button type="button" onclick="limpiarLista()" class="button-style">Clear</button>
+                <button type="button" onclick="verificarElemento()" class="button-style">Contains</button>
+                <button type="button" onclick="ordenarLista()" class="button-style">Sort</button>
+            </form>
+
+            <!-- Resultado -->
+            <p id="resultado-contains" class="result-style"></p>
+        </section>
+
+        <!-- Operaciones básicas -->
         <section class="content-section">
             <h2>Operaciones Básicas con Listas</h2>
             <p>Las operaciones más comunes con listas incluyen:</p>
@@ -45,63 +100,25 @@
             </ul>
         </section>
 
+        <!-- Operaciones por lenguaje -->
         <section class="content-section">
             <h2>Operaciones con Listas</h2>
             <p>Selecciona un lenguaje para ver cómo se realizan las operaciones con listas:</p>
-
-            <!-- Selector de lenguaje -->
             <select id="selector-lenguaje">
                 <option value="csharp">C#</option>
                 <option value="python">Python</option>
                 <option value="javascript">JavaScript</option>
             </select>
-
-            <!-- Sección dinámica para mostrar las operaciones -->
-            <div id="operaciones-lenguaje">
-                <!-- Aquí se mostrarán las operaciones según el lenguaje seleccionado -->
-            </div>
+            <div id="operaciones-lenguaje"></div>
         </section>
 
+        <!-- Métodos comunes -->
         <section class="content-section">
             <h2>Métodos comunes</h2>
             <p><code>Add()</code>, <code>Remove()</code>, <code>Insert()</code>, <code>Clear()</code>, <code>Contains()</code>, <code>Sort()</code>, etc.</p>
         </section>
 
-        <section class="content-section">
-            <h2>Prueba los métodos de listas en tiempo real</h2>
-
-            <!-- Mostrar la lista actual -->
-            <h3>Lista Actual</h3>
-            <ul id="lista-actual"></ul>
-
-            
-            <!-- Formulario para interactuar con la lista -->
-
-            <form id="form-lista" class="form-style">
-                <!-- Grupo de campos de entrada -->
-                <div class="form-group">
-                    <label for="elemento">Elemento:</label>
-                    <input type="text" id="elemento" placeholder="Ingresa un elemento" class="input-style" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="indice">Índice (opcional):</label>
-                    <input type="number" id="indice" placeholder="Índice" class="input-style">
-                </div>
-
-                <!-- Botones para los métodos -->
-                <button type="button" onclick="agregarElemento()" class="button-style">Add</button>
-                <button type="button" onclick="eliminarElemento()" class="button-style">Remove</button>
-                <button type="button" onclick="insertarElemento()" class="button-style">Insert</button>
-                <button type="button" onclick="limpiarLista()" class="button-style">Clear</button>
-                <button type="button" onclick="verificarElemento()" class="button-style">Contains</button>
-                <button type="button" onclick="ordenarLista()" class="button-style">Sort</button>
-            </form>
-
-            <!-- Mostrar resultados de Contains -->
-            <p id="resultado-contains"></p>
-        </section>
-
+        <!-- Aplicaciones -->
         <section class="content-section">
             <h2>Aplicaciones</h2>
             <ul class="content-list">
@@ -110,10 +127,13 @@
                 <li>Uso en algoritmos de búsqueda y ordenamiento</li>
             </ul>
         </section>
+
     </main>
-</body>
-    @* Scripts colocar aca *@
+
+    <!-- Scripts -->
     <script src="~/js/listaaleatoria.js"></script>
     <script src="~/js/metodoslistas.js"></script>
     <script src="~/js/operacioneslistas.js"></script>
+
+</body>
 </html>

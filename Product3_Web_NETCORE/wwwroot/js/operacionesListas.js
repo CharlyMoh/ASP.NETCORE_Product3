@@ -46,3 +46,15 @@ window.onload = actualizarOperaciones;
 
 // Escuchar cambios en el selector de lenguaje
 document.getElementById("selector-lenguaje").addEventListener("change", actualizarOperaciones);
+
+window.onload = () => {
+    // Mostrar lista aleatoria si existe
+    if (document.getElementById("lista-aleatoria")) {
+        mostrarListaAleatoria();
+    }
+
+    // Mostrar lista con métodos si existe
+    if (document.getElementById("lista-visual")) {
+        mostrarLista();
+    }
+};

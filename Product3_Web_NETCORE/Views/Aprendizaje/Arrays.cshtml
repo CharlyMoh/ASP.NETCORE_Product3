@@ -30,9 +30,15 @@
         <!-- Sección: Genera tu propio arreglo -->
         <section class="content-section">
             <h2>Genera tu propio arreglo</h2>
-            <ul id="arreglo-aleatorio"></ul>
-            <button onclick="mostrarArregloAleatorio()">Generar Nuevo Arreglo</button>
+            <button class="button-style" onclick="mostrarArregloAleatorio()">Generar Nuevo Arreglo</button>
+
+            <div id="arreglo-aleatorio" class="contenedor-arreglo"></div>
+
+            <!--***** Canvas agregado *****-->
+            <canvas id="canvas-arreglo" width="1000" height="150" style="margin-top:20px;"></canvas>
         </section>
+
+
 
         <!-- Sección: Operaciones Básicas con Arreglos -->
         <section class="content-section">
@@ -76,7 +82,11 @@
 
             <!-- Mostrar el arreglo actual -->
             <h3>Arreglo Actual</h3>
-            <ul id="arreglo-actual"></ul>
+            <div id="arreglo-actual" class="contenedor-arreglo"></div>
+
+            <!-- Canvas también -->
+            <canvas id="canvas-arreglo-tiempo-real" width="1000" height="150" style="margin-top:20px;"></canvas>
+
 
             <!-- Formulario para interactuar con el arreglo -->
             <form id="form-arreglo" class="form-style">
