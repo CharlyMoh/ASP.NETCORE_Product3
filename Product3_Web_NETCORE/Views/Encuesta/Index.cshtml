@@ -5,6 +5,92 @@
     int index = 0;
 }
 
+<h2 class="mt-4 mb-4 text-center">Encuesta: @Model.Tema</h2>
+
+<form method="post" asp-action="Index" asp-controller="Encuesta" asp-route-tema="@Model.Tema">
+    <div class="container d-flex flex-column gap-4">
+
+        @foreach (var item in preguntas)
+        {
+            var pregunta = item.Item1;
+            var opciones = item.Item2;
+
+            <div class="card p-4 shadow-sm border rounded">
+                <label class="fw-bold mb-2">Pregunta @(index + 1): @pregunta</label>
+
+                @* Mostrar canvas personalizado en preguntas específicas *@
+                @if (index == 3) // Pregunta 4
+                {
+                    <canvas id="canvasPregunta4" width="400" height="200" class="mb-3 border rounded"></canvas>
+                } 
+                else if (index == 4) // Pregunta 5
+                {
+                    <canvas id="canvasPregunta5" width="400" height="200" class="mb-3 border rounded"></canvas>
+                }
+                else if (index == 7) // Pregunta 8
+                {
+                    <canvas id="canvasPregunta8" width="400" height="200" class="mb-3 border rounded"></canvas>
+                }
+
+                @for (int i = 0; i < opciones.Length; i++)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="respuestas[@index]" value="@opciones[i]" id="respuesta_@(index)_@(i)" />
+                        <label class="form-check-label" for="respuesta_@(index)_@(i)">@opciones[i]</label>
+                        
+                    </div>
+                }
+            </div>
+
+            index++;
+        }
+
+        <button type="submit" class="btn btn-primary mt-4 align-self-start">Enviar Respuestas</button>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        function drawCanvas(canvasId, labels, colors) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            const ctx = canvas.getContext("2d");
+            const barHeight = 50;
+            const padding = 20;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            labels.forEach((label, i) => {
+                const y = i * (barHeight + padding);
+                ctx.fillStyle = colors[i];
+                ctx.fillRect(0, y, canvas.width * 0.7, barHeight);
+                ctx.fillStyle = "#fff";
+                ctx.font = "20px Arial";
+                ctx.fillText(label, 15, y + 32);
+            });
+        }
+
+        // Pregunta 4
+        drawCanvas("canvasPregunta4", ["Sort()", "orderArray()", "Orden()"], ["#4a69bd", "#1abc9c", "#38ada9"]);
+
+        // Pregunta 5
+        drawCanvas("canvasPregunta5", ["1", "0", "Depende del tipo"], ["#e55039", "#f6b93b", "#60a3bc"]);
+
+        // Pregunta 8
+        drawCanvas("canvasPregunta8", ["if-else", "for o foreach", "switch"], ["#78e08f", "#079992", "#b71540"]);
+    </script>
+}
+
+
+
+
+@* @using Product3_Web_NETCORE.Models
+@{
+    ViewData["Title"] = "Encuesta de " + Model.Tema;
+    var preguntas = EncuestaPreguntas.ObtenerPreguntas(Model.Tema);
+    int index = 0;
+}
+
 <h2>Encuesta: @Model.Tema</h2>
 
 <form method="post" asp-action="Index" asp-controller="Encuesta" asp-route-tema="@Model.Tema">
@@ -28,7 +114,7 @@
 
     <button type="submit" class="btn btn-primary">Enviar Respuestas</button>
 </form>
-
+ *@
 
 @* @using Product3_Web_NETCORE.Models
 @{

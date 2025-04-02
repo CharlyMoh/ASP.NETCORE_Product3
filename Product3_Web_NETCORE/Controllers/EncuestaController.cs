@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Product3_Web_NETCORE.Models;
 
 public class EncuestaController : Controller
 {
@@ -13,14 +14,16 @@ public class EncuestaController : Controller
     [HttpGet]
     public IActionResult Index(string tema)
     {
-        // Asegura que solo usuarios logueados puedan acceder
-        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioId")))
-            return RedirectToAction("Index", "Login");
+        ViewData["Title"] = "Encuesta de " + tema;
+        var preguntas = EncuestaPreguntas.ObtenerPreguntas(tema);
+        ViewBag.Preguntas = preguntas;
 
-        var encuesta = new Encuesta { Tema = tema };
+        if (tema == "Listas")
+            return View("IndexListas", new Encuesta { Tema = tema });
 
-        return View(encuesta);
+        return View("Index", new Encuesta { Tema = tema });
     }
+
 
     [HttpPost]
     public IActionResult Index(string tema, string[] respuestas)
