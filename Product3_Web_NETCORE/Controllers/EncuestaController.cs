@@ -24,7 +24,6 @@ public class EncuestaController : Controller
         return View("Index", new Encuesta { Tema = tema });
     }
 
-
     [HttpPost]
     public IActionResult Index(string tema, string[] respuestas)
     {
@@ -57,6 +56,28 @@ public class EncuestaController : Controller
 
             _context.SaveChanges();
 
+            // 3. Calcular resultados
+            var preguntas = EncuestaPreguntas.ObtenerPreguntas(tema);
+            var correctas = EncuestaPreguntas.ObtenerRespuestasCorrectas(tema);
+            int aciertos = 0;
+
+            for (int i = 0; i < preguntas.Count; i++)
+            {
+                if (i < respuestas.Length && respuestas[i] == correctas[i])
+                {
+                    aciertos++;
+                }
+            }
+
+            int total = preguntas.Count;
+            int errores = total - aciertos;
+            double calificacion = ((double)aciertos / total) * 10;
+
+            TempData["Aciertos"] = aciertos.ToString();
+            TempData["Errores"] = errores.ToString();
+            TempData["Calificacion"] = Math.Round(calificacion, 1).ToString();
+
+
             return RedirectToAction("Gracias");
         }
         catch (Exception)
@@ -66,11 +87,8 @@ public class EncuestaController : Controller
         }
     }
 
-
-
     public IActionResult Gracias()
     {
         return View();
     }
-
 }

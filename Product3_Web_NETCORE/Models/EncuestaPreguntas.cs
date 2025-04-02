@@ -39,5 +39,43 @@
 
             return new List<(string, string[])>(); // Por si el tema no coincide
         }
+
+        public static List<string> ObtenerRespuestasCorrectas(string tema)
+        {
+            if (tema == "Arrays")
+            {
+                return new List<string>
+        {
+            "Una estructura de datos que almacena varios elementos",
+            "Los arreglos son dinámicos, las listas no",
+            "Usando el índice entre corchetes",
+            "orderArray()",
+            "0",
+            "Se lanza una excepción",
+            "Cualquier tipo definido",
+            "for o foreach",
+            "Usando el índice: arreglo[i] = nuevoValor",
+            "Es fijo al declararse"
+        };
+            }
+            else if (tema == "Listas")
+            {
+                return new List<string>
+        {
+            "Una estructura de datos que permite almacenar una colección de elementos",
+            "Son dinámicas, se pueden agregar y quitar elementos.",
+            "Add()",
+            "Remove()",
+            "Inserta un elemento en una posición específica.",
+            "Clear()",
+            "Usando el índice entre corchetes []",
+            "for o foreach",
+            "Implementación de pilas y colas",
+            "El índice de los siguientes elementos se actualiza."
+        };
+            }
+            return new List<string>();
+        }
+
     }
 }
